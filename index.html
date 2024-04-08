@@ -13,6 +13,21 @@
             margin: 0;
             padding: 0;
         }
+        #header {
+            background-color: #007bff;
+            padding: 10px 0;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
         #home {
             padding: 20px;
             max-width: 800px;
@@ -22,55 +37,49 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        #search, #login {
-            width: 50%;
-            float: left;
-            margin-right: 10px; /* Add margin between search and login */
+        #search {
+            text-align: center;
         }
-        #user-account, #contact {
-            width: 50%;
-            float: right;
-            margin-left: 10px; /* Add margin between user account and contact */
-            text-align: right; /* Align text to the right */
-        }
-        form {
-            margin-bottom: 10px;
-        }
-        input[type="text"],
-        input[type="password"],
-        button {
+        #search input[type="text"] {
             width: calc(100% - 10px);
             padding: 10px;
             margin-bottom: 10px;
-            display: block;
+            display: inline-block;
         }
-        button {
+        #search button {
+            padding: 10px;
             background-color: #007bff;
             color: #fff;
             border: none;
             cursor: pointer;
         }
-        button:hover {
+        #search button:hover {
             background-color: #0056b3;
         }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         footer {
-            clear: both;
-            margin-top: 20px;
-            padding: 10px;
             background-color: #f4f4f4;
+            padding: 10px;
             text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <!-- Home Page -->
+    <!-- Header Section -->
+    <div id="header">
+        <div>
+            <span>Galaxy Team - CS 4347</span>
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="index2.html" target="_blank">Add New Book</a> <!-- Open link in new tab -->
+            <a href="login.html">Login</a> <!-- Link to login page -->
+        </div>
+    </div>
+
+    <!-- Home Page Content -->
     <div id="home">
         <h1>Welcome to the Library Management System</h1>
         <div id="search">
@@ -80,24 +89,14 @@
                 <button type="submit">Search</button>
             </form>
         </div>
-        <div id="login">
-            <h2>Login</h2>
-            <form action="login.php" method="POST">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
-        <div id="user-account">
-            <h2>User Account</h2>
-            <a href="user-account.php">View Account</a>
-        </div>
-        <div id="contact">
-            <h2>Contact Information</h2>
-            <!-- Add contact information here -->
-            <h3>Galaxy Team - CS 4347</h3>
-        </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <h2>Contact Information</h2>
+        <!-- Add contact information here -->
+        <h3>Galaxy Team - CS 4347</h3>
+    </footer>
 
     <!-- Add your JavaScript links here -->
     <script src="script.js"></script>
