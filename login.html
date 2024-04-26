@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
-    <!-- Add your CSS links here -->
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add custom CSS styles here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        #header {
-            background-color: #007bff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        #header a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        #login-form {
-            background-color: #f9f9f9;
-            padding: 10px;
-            margin-top: 10px;
-        }
-        #login-form input[type="text"],
-        #login-form input[type="password"],
-        #login-form button {
-            width: calc(100% - 10px);
-            padding: 10px;
-            margin-bottom: 10px;
-            display: block;
-        }
-        #login-form button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        #login-form button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <div id="header">
-        <a href="index.html">Home</a>
-        <a href="index2.html" target="_blank">Add New Book</a> <!-- Open link in new tab -->
-        <a href="login.html">Login</a> <!-- Link to login page -->
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Library Management System</title>
+        <!-- Add your CSS links here -->
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Add custom CSS styles here */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            #header {
+                background-color: #007bff;
+                padding: 10px 0;
+                text-align: center;
+            }
+            #header a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+            #login-form {
+                background-color: #f9f9f9;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            #login-form input[type="text"],
+            #login-form input[type="password"],
+            #login-form button {
+                width: calc(100% - 10px);
+                padding: 10px;
+                margin-bottom: 10px;
+                display: block;
+            }
+            #login-form button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            #login-form button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <div id="header">
+            <a href="index.html">Home</a>
+            <a href="index2.html" target="_blank">Add New Book</a>
+            <!-- Open link in new tab -->
+            <a href="login.html">Login</a>
+            <!-- Link to login page -->
+        </div>
 
-    <!-- Login Page Content -->
-    <div id="login-form">
-        <h1>Login</h1>
-        <form action="login.php" method="POST">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit">Login</button>
-        </form>
-    </div>
+        <!-- Login Page Content -->
+        <div id="login-form">
+            <h1>Login</h1>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username" />
+                <input type="password" name="password" placeholder="Password" />
+                <button type="submit" name="login">Login</button>
+            </form>
+        </div>
 
-    <!-- Add your JavaScript links here -->
-    <script src="script.js"></script>
-</body>
+        <div id="login-form" style="margin-top: 5%;">
+            <h1>Update Login</h1>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Username" />
+                <input type="text" name="old_password" placeholder="Old Password" />
+                <input type="text" name="new_password" placeholder="New Password" />
+                <button type="submit" name="update_login">Update</button>
+            </form>
+        </div>
+
+        <!-- Add your JavaScript links here -->
+        <script src="script.js"></script>
+    </body>
 </html>

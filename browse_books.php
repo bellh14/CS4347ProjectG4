@@ -127,14 +127,12 @@
             </thead>
             <tbody>
                 <?php
-                $query = "select * from `BOOK`";
+                $stmt = $connection->prepare("SELECT * FROM `BOOK`");
+                $stmt->execute();
 
-                $result = mysqli_query($connection, $query);
-
-                if (!$result) {
-                    die("Query failed: " . mysqli_error($connection));
-                } else {
-                    while ($row = mysqli_fetch_assoc($result)) {
+                $result = $stmt->get_result();
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row['title'] . "</td>";
                         echo "<td>" . $row['author'] . "</td>";
@@ -145,10 +143,12 @@
                         echo "<td><a href='delete_book.php?bookID=" . $row['bookID'] . "'>Delete</a></td>";
                         echo "</tr>";
                     }
+                } else {
+                    echo "0 results";
                 }
+                $stmt->close();
 
                 ?>
-                <!-- Add more rows for additional books -->
             </tbody>
         </table>
     </div>
